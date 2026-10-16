@@ -1,0 +1,55 @@
+export const skillsData = {
+  development: {
+    title: "Full-Stack Development",
+    icon: "💻",
+    color: "from-blue-500 to-cyan-500",
+    items: [
+      { name: "HTML5", level: 95 },
+      { name: "CSS3 / Tailwind", level: 90 },
+      { name: "JavaScript", level: 90 },
+      { name: "React.js", level: 85 },
+      { name: "Node.js", level: 80 },
+      { name: "Express.js", level: 80 },
+      { name: "Java", level: 85 },
+    ],
+  },
+  database: {
+    title: "Database & Backend",
+    icon: "🗄️",
+    color: "from-purple-500 to-pink-500",
+    items: [
+      { name: "Oracle DB", level: 85 },
+      { name: "SQL Queries", level: 90 },
+      { name: "PostgreSQL", level: 80 },
+      { name: "MongoDB", level: 75 },
+      { name: "Database Design", level: 80 },
+      { name: "REST APIs", level: 85 },
+    ],
+  },
+  design: {
+    title: "Graphic Design",
+    icon: "🎨",
+    color: "from-pink-500 to-orange-500",
+    items: [
+      { name: "Figma", level: 90 },
+      { name: "Adobe Photoshop", level: 85 },
+      { name: "Adobe Illustrator", level: 80 },
+      { name: "Canva", level: 95 },
+      { name: "UI/UX Design", level: 85 },
+      { name: "Logo Design", level: 90 },
+    ],
+  },
+  social: {
+    title: "Social Media Management",
+    icon: "📱",
+    color: "from-green-500 to-teal-500",
+    items: [
+      { name: "Content Creation", level: 90 },
+      { name: "Instagram Marketing", level: 85 },
+      { name: "Facebook Ads", level: 80 },
+      { name: "LinkedIn Strategy", level: 85 },
+      { name: "Analytics & Insights", level: 75 },
+      { name: "Community Management", level: 90 },
+    ],
+  },
+};
