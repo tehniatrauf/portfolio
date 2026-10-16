@@ -50,7 +50,7 @@ const Hero = () => {
               { icon: FaGithub, link: "https://github.com/tehniatrauf" },
               { icon: FaLinkedin, link: "https://www.linkedin.com/in/tehniat-rauf-9055a6411" },
               { icon: FaInstagram, link: "#" },
-              { icon: FaEnvelope, link: "mailto:tehniatrauf55@gmail.com" },
+              { icon: FaEnvelope, link: "https://mail.google.com/mail/?view=cm&fs=1&to=tehniatrauf55@gmail.com&su=${subject}&body=${body}" },
             ].map((social, i) => (
               <a
                 key={i}
