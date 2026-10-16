@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { projectsData } from '../data/projects';
+
 const Projects = () => {
   const [filter, setFilter] = useState('All');
   const categories = ['All', 'Full-Stack', 'Design', 'Social Media'];
@@ -98,7 +99,14 @@ const Projects = () => {
                   >
                     <ExternalLink size={14} className="inline mr-1" /> Live
                   </a>
-                  
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center py-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-slate-700 transition-all text-sm font-medium"
+                  >
+                    <FaGithub size={14} className="inline mr-1" /> Code
+                  </a>
                 </div>
               </div>
             </motion.div>

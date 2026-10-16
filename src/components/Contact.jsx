@@ -11,9 +11,10 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Opens default email client
     const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+    );
     window.location.href = `mailto:tehniatrauf55@gmail.com?subject=${subject}&body=${body}`;
 
     toast.success('Opening your email app...');
@@ -56,7 +57,10 @@ const Contact = () => {
             </p>
 
             <div className="space-y-4">
-              <a href="mailto:tehniatrauf55@gmail.com" className="flex items-center gap-4 glass p-4 rounded-xl hover:bg-white/10 transition-all">
+              <a
+                href="mailto:tehniatrauf55@gmail.com"
+                className="flex items-center gap-4 glass p-4 rounded-xl hover:bg-white/10 transition-all"
+              >
                 <div className="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center">
                   <Mail size={20} />
                 </div>
@@ -66,13 +70,18 @@ const Contact = () => {
                 </div>
               </a>
 
-              <a href="#" className="flex items-center gap-4 glass p-4 rounded-xl hover:bg-white/10 transition-all">
+              <a
+                href="https://wa.me/923195654407"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 glass p-4 rounded-xl hover:bg-white/10 transition-all"
+              >
                 <div className="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center">
                   <MessageCircle size={20} />
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">WhatsApp</p>
-                  <p className="font-medium">Available on request</p>
+                  <p className="font-medium">+92 319 565 4407</p>
                 </div>
               </a>
             </div>
