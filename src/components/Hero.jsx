@@ -3,11 +3,28 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
 const Hero = () => {
+  // Predefined email subject & body (URL-encoded)
+  const emailSubject = encodeURIComponent("Project Inquiry");
+  const emailBody = encodeURIComponent("Hi Tehniat, I'd like to discuss a project with you.");
+
+  const socials = [
+    { icon: FaGithub, link: "https://github.com/tehniatrauf" },
+    { icon: FaLinkedin, link: "https://www.linkedin.com/in/tehniat-rauf-9055a6411" },
+    { icon: FaInstagram, link: "#" },
+    {
+      icon: FaEnvelope,
+      link: `https://mail.google.com/mail/?view=cm&fs=1&to=tehniatrauf55@gmail.com&su=${emailSubject}&body=${emailBody}`,
+    },
+  ];
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24">
       {/* Background Blobs */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full opacity-20 blur-3xl animate-blob"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full opacity-20 blur-3xl animate-blob" style={{ animationDelay: '2s' }}></div>
+      <div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full opacity-20 blur-3xl animate-blob"
+        style={{ animationDelay: '2s' }}
+      ></div>
 
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left Side */}
@@ -36,22 +53,23 @@ const Hero = () => {
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-4 mb-8">
-            <a href="#projects" className="gradient-bg px-8 py-3 rounded-full font-semibold hover:scale-105 transition-transform">
+            <a
+              href="#projects"
+              className="gradient-bg px-8 py-3 rounded-full font-semibold hover:scale-105 transition-transform"
+            >
               View My Work
             </a>
-            <a href="#contact" className="border-2 border-blue-500 text-blue-400 px-8 py-3 rounded-full font-semibold hover:bg-blue-500 hover:text-white transition-all">
+            <a
+              href="#contact"
+              className="border-2 border-blue-500 text-blue-400 px-8 py-3 rounded-full font-semibold hover:bg-blue-500 hover:text-white transition-all"
+            >
               Hire Me
             </a>
           </div>
 
           {/* Social */}
           <div className="flex gap-4">
-            {[
-              { icon: FaGithub, link: "https://github.com/tehniatrauf" },
-              { icon: FaLinkedin, link: "https://www.linkedin.com/in/tehniat-rauf-9055a6411" },
-              { icon: FaInstagram, link: "#" },
-              { icon: FaEnvelope, link: "https://mail.google.com/mail/?view=cm&fs=1&to=tehniatrauf55@gmail.com&su=${subject}&body=${body}" },
-            ].map((social, i) => (
+            {socials.map((social, i) => (
               <a
                 key={i}
                 href={social.link}
@@ -79,7 +97,8 @@ const Hero = () => {
                 alt="Tehniat Rauf"
                 className="w-full h-full rounded-full object-cover"
                 onError={(e) => {
-                  e.target.src = 'https://ui-avatars.com/api/?name=Tehniat+Rauf&size=400&background=3b82f6&color=fff&bold=true';
+                  e.target.src =
+                    'https://ui-avatars.com/api/?name=Tehniat+Rauf&size=400&background=3b82f6&color=fff&bold=true';
                 }}
               />
             </div>
