@@ -6,7 +6,7 @@ import { projectsData } from '../data/projects';
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
-  const categories = ['All', 'Full-Stack', 'Design', 'Social Media'];
+  const categories = ['All', 'Full-Stack'];
 
   const filtered = filter === 'All'
     ? projectsData

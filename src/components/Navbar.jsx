@@ -15,6 +15,7 @@ const Navbar = () => {
   const links = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
+  
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Services', href: '#services' },
@@ -31,7 +32,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <a href="#home" className="text-2xl font-bold gradient-text font-display">
-          Tehniat.dev
+          Tehniat.Rauf
         </a>
 
         {/* Desktop */}
