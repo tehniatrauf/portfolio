@@ -8,21 +8,24 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+  e.preventDefault();
+  setLoading(true);
 
-    const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
-    );
-    window.location.href = `mailto:tehniatrauf55@gmail.com?subject=${subject}&body=${body}`;
+  const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
+  const body = encodeURIComponent(
+    `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+  );
 
-    toast.success('Opening your email app...');
-    setTimeout(() => {
-      setLoading(false);
-      setForm({ name: '', email: '', message: '' });
-    }, 1000);
-  };
+  // ✅ Gmail compose URL
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=tehniatrauf55@gmail.com&su=${subject}&body=${body}`;
+  window.open(gmailUrl, '_blank');
+
+  toast.success('Opening Gmail...');
+  setTimeout(() => {
+    setLoading(false);
+    setForm({ name: '', email: '', message: '' });
+  }, 1000);
+};
 
   return (
     <section id="contact" className="py-24 relative">
