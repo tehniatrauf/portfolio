@@ -8,24 +8,25 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  setLoading(true);
+    e.preventDefault();
+    setLoading(true);
 
-  const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
-  const body = encodeURIComponent(
-    `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
-  );
+    // Gmail Compose URL (Browser mein direct Gmail khulega)
+    const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+    );
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=tehniatrauf55@gmail.com&su=${subject}&body=${body}`;
+    
+    // Naye tab mein Gmail open karein
+    window.open(gmailUrl, '_blank');
 
-  // ✅ Gmail compose URL
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=tehniatrauf55@gmail.com&su=${subject}&body=${body}`;
-  window.open(gmailUrl, '_blank');
-
-  toast.success('Opening Gmail...');
-  setTimeout(() => {
-    setLoading(false);
-    setForm({ name: '', email: '', message: '' });
-  }, 1000);
-};
+    toast.success('Opening Gmail...');
+    setTimeout(() => {
+      setLoading(false);
+      setForm({ name: '', email: '', message: '' });
+    }, 1000);
+  };
 
   return (
     <section id="contact" className="py-24 relative">
@@ -60,6 +61,7 @@ const Contact = () => {
             </p>
 
             <div className="space-y-4">
+              {/* Email Link (Direct Mail App) */}
               <a
                 href="mailto:tehniatrauf55@gmail.com"
                 className="flex items-center gap-4 glass p-4 rounded-xl hover:bg-white/10 transition-all"
@@ -73,6 +75,7 @@ const Contact = () => {
                 </div>
               </a>
 
+              {/* WhatsApp Link */}
               <a
                 href="https://wa.me/923195654407"
                 target="_blank"
@@ -140,7 +143,7 @@ const Contact = () => {
               className="w-full gradient-bg py-3 rounded-xl font-semibold hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 disabled:opacity-50"
             >
               <Send size={18} />
-              {loading ? 'Sending...' : 'Send Message'}
+              {loading ? 'Opening...' : 'Send Message'}
             </button>
           </motion.form>
         </div>

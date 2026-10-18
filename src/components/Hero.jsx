@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaDownload } from 'react-icons/fa';
 
 const Hero = () => {
   // Predefined email subject & body (URL-encoded)
@@ -58,6 +58,14 @@ const Hero = () => {
               className="gradient-bg px-8 py-3 rounded-full font-semibold hover:scale-105 transition-transform"
             >
               View My Work
+            </a>
+            {/* ✅ Added Download CV Button Here */}
+            <a
+              href="/Tehniat-Rauf-CV.pdf"
+              download="Tehniat-Rauf-CV.pdf"
+              className="border-2 border-purple-500 text-purple-400 px-8 py-3 rounded-full font-semibold hover:bg-purple-500 hover:text-white transition-all flex items-center gap-2"
+            >
+              <FaDownload size={16} /> Download CV
             </a>
             <a
               href="#contact"
